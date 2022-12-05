@@ -1,0 +1,76 @@
+@use "./global";
+@use "./components/btn";
+
+// index.html
+.section__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        width: 160px;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        a {
+            margin-left: 4rem;
+
+            // second child
+            &:nth-child(2) {
+                color: global.$color-gray;
+            }
+        }
+    }
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .hero__text {
+        width: 45%;
+
+        p {
+            margin-bottom: 3rem;
+        }
+    }
+
+    .hero__image {
+        width: 45%;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+footer {
+    padding: 2rem 0;
+    background-color: global.$color-primary;
+
+    .footer__text {
+        display: flex;
+
+        .footer__title {
+            color: global.$color-white;
+            margin-right: 1rem;
+        }
+    }
+}

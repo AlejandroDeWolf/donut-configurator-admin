@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+// ------ Colors ------
+$color-primary: #e72c70;
+$color-secondary: #82d1e4;
+$color-accent: #f7f249;
+$color-white: #ffffff;
+$color-black: #181818;
+$color-gray: #585858;
+
+$color-error: #ffcccc;
+$color-success: #ccffcc;
+$color-warning: #ffffcc;
+
+// ------ CSS Reset ------
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: $color-black;
+}
+
+// ------ Typo -------
+h1 {
+  font-family: "Dosis", sans-serif;
+  font-weight: Bold;
+  font-size: 3.1rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-family: "Dosis", sans-serif;
+  font-weight: Bold;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+
+h4 {
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: $color-black;
+}
+
+// ------ Layout ------
+.section__margin {
+  margin: 2rem 4rem;
+
+  @media (min-width: 1400px) {
+    margin: 2rem 8rem;
+  }
+}
+
+.section__padding {
+  padding: 2rem 4rem;
+
+  @media (min-width: 1400px) {
+    margin: 2rem 8rem;
+  }
+}

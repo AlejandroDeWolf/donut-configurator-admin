@@ -1,0 +1,16 @@
+@use "../global";
+
+.btn {
+  padding: 16px 40px;
+  border-radius: 50px;
+  background-color: global.$color-primary;
+  color: global.$color-white;
+}
+
+.btn--active {
+  background-color: global.$color-secondary;
+}
+
+.btn--inactive {
+  background-color: global.$color-gray;
+}
