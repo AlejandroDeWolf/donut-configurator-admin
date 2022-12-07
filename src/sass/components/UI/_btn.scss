@@ -1,12 +1,15 @@
 @use "../../global";
 
 .btn {
-  padding: 16px 40px;
-  border-radius: 5px;
+  padding: 20px 40px;
+  border-radius: 50px;
   border: none;
   background-color: global.$color-primary;
-  color: global.$color-white;
-  font-size: 1rem;
+  color: global.$color-accent;
+  font-size: 1.2rem;
+  font-family: "Dosis", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .btn--active {
