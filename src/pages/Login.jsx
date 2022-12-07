@@ -10,7 +10,7 @@ const Login = () => {
       </div>
 
       <div className="login__form">
-        <div className="login__form--title">
+        <div className="login__form__title">
           <h2>Login</h2>
           <p>Welcome back, please login below to go to the admin panel.</p>
         </div>
