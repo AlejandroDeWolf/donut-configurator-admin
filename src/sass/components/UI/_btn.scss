@@ -3,6 +3,7 @@
 .btn {
   padding: 16px 40px;
   border-radius: 50px;
+  border: none;
   background-color: global.$color-primary;
   color: global.$color-white;
 }
@@ -13,4 +14,8 @@
 
 .btn--inactive {
   background-color: global.$color-gray;
+}
+
+.form__btn {
+  width: 100%;
 }
