@@ -1,2 +1,6 @@
 @use "../global";
-@use "./UI/btn";
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+}
