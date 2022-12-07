@@ -2,10 +2,11 @@
 
 .btn {
   padding: 16px 40px;
-  border-radius: 50px;
+  border-radius: 5px;
   border: none;
   background-color: global.$color-primary;
   color: global.$color-white;
+  font-size: 1rem;
 }
 
 .btn--active {
