@@ -1,17 +1,16 @@
 import React from "react";
 
-import { InputField } from "../components";
-
 const Form = () => {
   return (
     <form>
-      <InputField type="text" name="username" id="username" label="Username" />
-      <InputField
-        type="password"
-        name="password"
-        id="password"
-        label="Password"
-      />
+      <div className="form__group">
+        <label htmlFor="email">Email</label>
+        <input type="email" name="email" id="email" />
+      </div>
+      <div className="form__group">
+        <label htmlFor="password">Password</label>
+        <input type="password" name="password" id="password" />
+      </div>
       <button type="submit">Login</button>
     </form>
   );
