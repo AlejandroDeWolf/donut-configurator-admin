@@ -4,11 +4,11 @@ const Form = () => {
   return (
     <form>
       <div className="form__group">
-        <label htmlFor="email">Email</label>
-        <input type="email" name="email" id="email" />
+        <label htmlFor="username">Gebruikersnaam</label>
+        <input type="text" name="username" id="username" />
       </div>
       <div className="form__group">
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Wachtwoord</label>
         <input type="password" name="password" id="password" />
       </div>
       <button type="submit" className="btn form__btn">
