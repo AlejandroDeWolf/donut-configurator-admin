@@ -3,4 +3,30 @@
 .form__group {
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
+
+  // style label
+  label {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: global.$color-gray;
+  }
+
+  // style input
+  input {
+    padding: 1rem 1.5rem;
+    border-radius: 5px;
+    border: 1px solid global.$color-gray;
+    background-color: global.$color-white;
+    color: global.$color-black;
+    font-size: 1rem;
+    font-weight: 400;
+    outline: none;
+    transition: all 0.3s;
+
+    &:focus {
+      border-color: global.$color-secondary;
+    }
+  }
 }
