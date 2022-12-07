@@ -1,7 +1,10 @@
+import React from "react";
+import { Login } from "./pages";
+
 function App() {
   return (
     <div className="App">
-      <h1>Donut Configurator Admin Panel</h1>
+      <Login />
     </div>
   );
 }
