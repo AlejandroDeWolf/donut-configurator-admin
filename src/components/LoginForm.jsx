@@ -35,16 +35,11 @@ const Form = () => {
     } else {
       const data = await response.json();
       console.log(data);
+      // store token in local storage
+      localStorage.setItem("token", data.token);
+      // redirect to admin page
+      window.location.href = "/admin";
     }
-
-    // // store token in local storage
-    // const data = await response.json();
-    // localStorage.setItem("token", data.jwt);
-
-    // // redirect to admin page
-    // window.location.href = "/admin";
-
-    // console.log(data);
   };
 
   return (
