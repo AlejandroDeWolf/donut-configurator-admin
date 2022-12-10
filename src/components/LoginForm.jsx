@@ -38,7 +38,7 @@ const Form = () => {
       // store token in local storage
       localStorage.setItem("token", data.token);
       // redirect to admin page
-      window.location.href = "/admin";
+      window.location.href = "/dashboard";
     }
   };
 
