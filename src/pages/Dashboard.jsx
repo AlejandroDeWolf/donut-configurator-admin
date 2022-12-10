@@ -12,15 +12,16 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="dashboard">
+    <>
       <Sidebar />
-      <div className="dashboard__content">
-        <div className="dashboard__content__title">
-          <h2>Dashboard</h2>
-          <p>Welcome back, please login below to go to the admin panel.</p>
+      <div className="dashboard">
+        <div className="dashboard__content">
+          <div className="dashboard__content__title">
+            <h2>Dashboard</h2>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
