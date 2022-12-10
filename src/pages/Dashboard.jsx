@@ -1,6 +1,6 @@
 import React from "react";
 
-const Gallery = () => {
+const Dashboard = () => {
   // check if user is logged in
   const token = localStorage.getItem("token");
   if (!token) {
@@ -9,7 +9,7 @@ const Gallery = () => {
     console.log("logged in");
   }
 
-  return <div>Gallery</div>;
+  return <div>Dashboard</div>;
 };
 
-export default Gallery;
+export default Dashboard;
