@@ -30,13 +30,13 @@ const Sidebar = () => {
                     </li>
                     {/* links to dashboard and profile with highlight class when active */}
                     <li className='nav-text'>
-                        <NavLink to='/dashboard' activeClassName="active">
+                        <NavLink to='/dashboard' activeclassname="active">
                             <RiLayoutGridFill />
                             <span>Dashboard</span>
                         </NavLink>
                     </li>
                     <li className='nav-text'>
-                        <NavLink to='/profile' activeClassName="active">
+                        <NavLink to='/profile' activeclassname="active">
                             <RiSettings3Fill />
                             <span>Profile</span>
                         </NavLink>
