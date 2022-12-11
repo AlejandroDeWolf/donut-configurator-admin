@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { IconContext } from 'react-icons'
 import { RiMenuFill, RiCloseFill, RiLayoutGridFill, RiSettings3Fill } from 'react-icons/ri'
 import logo from '/assets/images/logo.png';
@@ -12,9 +12,9 @@ const Sidebar = () => {
     return (
         <IconContext.Provider value={{ color: "undefined" }}>
             <div className='navigation'>
-                <Link to='#' className='menu-bars'>
+                <NavLink to='#' className='menu-bars'>
                     <RiMenuFill onClick={showSidebar} />
-                </Link>
+                </NavLink>
             </div>
 
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
@@ -24,21 +24,22 @@ const Sidebar = () => {
 
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     <li className='navbar-toggle'>
-                        <Link to='#' className='menu-bars menu__bars--close'>
+                        <NavLink to='#' className='menu-bars menu__bars--close'>
                             <RiCloseFill />
-                        </Link>
+                        </NavLink>
                     </li>
+                    {/* links to dashboard and profile with highlight class when active */}
                     <li className='nav-text'>
-                        <Link to='/dashboard'>
+                        <NavLink to='/dashboard' activeClassName="active">
                             <RiLayoutGridFill />
                             <span>Dashboard</span>
-                        </Link>
+                        </NavLink>
                     </li>
                     <li className='nav-text'>
-                        <Link to='/profile'>
+                        <NavLink to='/profile' activeClassName="active">
                             <RiSettings3Fill />
                             <span>Profile</span>
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>
