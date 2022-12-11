@@ -11,7 +11,7 @@ const Sidebar = () => {
 
     return (
         <IconContext.Provider value={{ color: "undefined" }}>
-            <div className='sidebar'>
+            <div className='navigation'>
                 <Link to='#' className='menu-bars'>
                     <FaIcons.FaBars onClick={showSidebar} />
                 </Link>
@@ -20,7 +20,7 @@ const Sidebar = () => {
             <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
                 <ul className='nav-menu-items' onClick={showSidebar}>
                     <li className='navbar-toggle'>
-                        <Link to='#' className='menu-bars'>
+                        <Link to='#' className='menu-bars menu__bars--close'>
                             <AiIcons.AiOutlineClose />
                         </Link>
                     </li>
