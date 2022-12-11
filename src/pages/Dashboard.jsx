@@ -15,7 +15,7 @@ const Dashboard = () => {
   const [donuts, setDonuts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [donutsPerPage] = useState(12);
+  const [donutsPerPage] = useState(8);
 
   useEffect(() => {
     const fetchDonuts = async () => {
@@ -23,7 +23,7 @@ const Dashboard = () => {
         "https://adorable-red-sundress.cyclic.app/donuts"
       );
       const data = await response.json();
-      setDonuts(data);
+      setDonuts(data.reverse());
       setLoading(false);
     };
     fetchDonuts();
