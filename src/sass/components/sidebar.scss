@@ -1,12 +1,15 @@
 @use "../global";
 
-/* Navbar CSS */
-.sidebar {
+.navigation {
   background-color: global.$color-primary;
   height: 80px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
+
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 }
 
 .menu-bars {
@@ -14,6 +17,12 @@
   font-size: 2rem;
   background: none;
   color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .menu__bars--close {
+    display: none;
+  }
 }
 
 .nav-menu {
@@ -26,6 +35,12 @@
   top: 0;
   left: -100%;
   transition: 850ms;
+
+  @media screen and (min-width: 768px) {
+    display: block;
+    position: relative;
+    left: 0;
+  }
 }
 
 .nav-menu.active {
@@ -37,41 +52,42 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 8px 0px 8px 16px;
+  margin: 1rem 0;
+  padding-left: 16px;
   list-style: none;
-  height: 60px;
-}
 
-.nav-text a {
-  text-decoration: none;
-  color: global.$color-white;
-  font-size: 18px;
-  width: 95%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: 0 16px;
-  border-radius: 4px;
-}
+  a {
+    text-decoration: none;
+    color: global.$color-white;
+    font-family: "Dosis", sans-serif;
+    font-size: 1.4rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 16px 0 16px 16px;
+    border-radius: 40px 0 0 40px;
 
-.nav-text a:hover {
-  background-color: global.$color-secondary;
-  color: global.$color-white;
+    &:hover {
+      background-color: global.$color-secondary;
+      color: global.$color-white;
+    }
+  }
+
+  span {
+    margin-left: 16px;
+  }
 }
 
 .nav-menu-items {
   width: 100%;
-}
 
-.navbar-toggle {
-  background-color: global.$color-primary;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-span {
-  margin-left: 16px;
+  .navbar-toggle {
+    background-color: global.$color-primary;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
