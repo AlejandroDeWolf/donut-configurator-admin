@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { Donuts, Sidebar } from "../components";
+import { Donuts, Pagination, Sidebar } from "../components";
 
 const Dashboard = () => {
   // check if user is logged in
@@ -14,6 +14,8 @@ const Dashboard = () => {
   // fetch donut data from api
   const [donuts, setDonuts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [donutsPerPage] = useState(12);
 
   useEffect(() => {
     const fetchDonuts = async () => {
@@ -27,6 +29,14 @@ const Dashboard = () => {
     fetchDonuts();
   }, []);
 
+  // get current donuts
+  const indexOfLastDonut = currentPage * donutsPerPage;
+  const indexOfFirstDonut = indexOfLastDonut - donutsPerPage;
+  const currentDonuts = donuts.slice(indexOfFirstDonut, indexOfLastDonut);
+
+  // change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div className="container__dashboard">
       <Sidebar />
@@ -35,7 +45,8 @@ const Dashboard = () => {
           <div className="dashboard__content__title">
             <h2>Dashboard</h2>
           </div>
-          <Donuts donuts={donuts} loading={loading} />
+          <Donuts donuts={currentDonuts} loading={loading} />
+          <Pagination donutsPerPage={donutsPerPage} totalDonuts={donuts.length} paginate={paginate} />
         </div>
       </div>
     </div>
