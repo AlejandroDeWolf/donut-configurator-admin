@@ -1,0 +1,29 @@
+@use "../global";
+
+.dashboard__content__donuts__donut {
+    width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 18px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    cursor: pointer;
+    transition: all .1s ease-in-out;
+
+    // on hover
+    &:hover {
+        box-shadow: rgb(231, 44, 112, 0.6) 0px 0px 60px;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .dashboard__content__donuts__donut__info {
+        padding-left: 1rem;
+
+        p {
+            color: global.$color-gray;
+        }
+    }
+}

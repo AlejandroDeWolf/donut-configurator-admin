@@ -1,10 +1,15 @@
 @use "../global";
 
 .pagination {
+    // always place on the bottom of the page
+    position: absolute;
+    bottom: 1rem;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    padding: 1rem 0;
+    width: 85%;
 
     .pagination__item {
         margin: 0 8px;
