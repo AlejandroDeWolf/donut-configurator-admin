@@ -1,8 +1,26 @@
 @use "../global";
 
-// on big screens
-@media screen and (min-width: 768px) {
-    .container__dashboard {
+.container__dashboard {
+    @media (min-width: 768px) {
         display: flex;
+    }
+
+    .dashboard {
+        background-color: burlywood;
+        width: 100%;
+
+        .dashboard__content__donuts {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            grid-column-gap: 32px;
+            grid-row-gap: 32px;
+
+            .dashboard__content__donuts__donut {
+                background-color: #fff;
+                min-height: 200px;
+            }
+        }
+
     }
 }
