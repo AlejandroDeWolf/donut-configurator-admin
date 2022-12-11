@@ -11,7 +11,13 @@ const Donuts = ({ donuts, loading }) => {
         <div className="dashboard__content__donuts">
             {donuts.map((donut) => (
                 <div className="dashboard__content__donuts__donut" key={donut._id}>
-                    <p>{donut.dough}</p>
+                    <div className="dashboard__content__donuts__donut__image">
+                        <img src={donut.snapshot} alt="donut" />
+                    </div>
+                    <div className="dashboard__content__donuts__donut__info">
+                        <h3>{donut.company}</h3>
+                        <p>{donut.date}</p>
+                    </div>
                 </div>
             ))}
         </div>
