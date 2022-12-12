@@ -69,17 +69,23 @@ a {
 
 // ------ Layout ------
 .section__margin {
-  margin: 2rem 4rem;
+  margin: 4rem;
 
   @media (min-width: 1400px) {
-    margin: 2rem 6rem;
+    margin: 4rem 6rem;
   }
 }
 
 .section__padding {
-  padding: 2rem 4rem;
+  padding: 4rem;
 
   @media (min-width: 1400px) {
-    padding: 2rem 6rem;
+    padding: 4rem 6rem;
   }
 }
+
+// ------ Media Queries ------
+$breakpoint-big: 1800px;
+$breakpoint-medium: 1080px;
+$breakpoint-tablet: 820px;
+$breakpoint-mobile: 550px;
