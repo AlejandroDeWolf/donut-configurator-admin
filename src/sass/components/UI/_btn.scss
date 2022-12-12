@@ -10,6 +10,12 @@
   font-family: "Dosis", sans-serif;
   font-weight: 500;
   cursor: pointer;
+  transition: all 0.1s ease-in-out;
+
+  &:hover {
+    background-color: global.$color-secondary;
+    color: global.$color-primary;
+  }
 }
 
 .btn--active {
