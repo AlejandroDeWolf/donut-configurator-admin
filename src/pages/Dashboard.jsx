@@ -42,9 +42,6 @@ const Dashboard = () => {
       <Sidebar />
       <div className="dashboard section__padding">
         <div className="dashboard__content">
-          <div className="dashboard__content__title">
-            <h2>Dashboard</h2>
-          </div>
           <Donuts donuts={currentDonuts} loading={loading} />
           <Pagination
             donutsPerPage={donutsPerPage}
