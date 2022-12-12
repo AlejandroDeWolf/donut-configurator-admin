@@ -1,12 +1,22 @@
 @use "../global";
 
 .dashboard__content__donuts__donut {
-    width: 100%;
+    width: 80%;
     margin-bottom: 2rem;
     border-radius: 18px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     cursor: pointer;
     transition: all .1s ease-in-out;
+
+    // medium breakpoint
+    @media (min-width: global.$breakpoint-xl) {
+        width: 100%;
+    }
+
+    // small breakpoint and under 
+    @media (max-width: global.$breakpoint-medium) {
+        width: 100%;
+    }
 
     // on hover
     &:hover {

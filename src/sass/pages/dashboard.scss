@@ -1,14 +1,14 @@
 @use "../global";
 
 .container__dashboard {
-  @media (min-width: 768px) {
+  @media (min-width: global.$breakpoint-tablet) {
     display: flex;
   }
 
   .dashboard {
     width: 85%;
 
-    @media (max-width: 768px) {
+    @media (max-width: global.$breakpoint-tablet) {
       width: 100%;
     }
 
