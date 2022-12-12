@@ -8,7 +8,6 @@ const Pagination = ({ donutsPerPage, totalDonuts, paginate }) => {
         pageNumbers.push(i)
     }
 
-    // start with first page highlighted
     const activePage = (e) => {
         const paginationItems = document.querySelectorAll('.pagination__item__link')
         paginationItems.forEach(item => {
