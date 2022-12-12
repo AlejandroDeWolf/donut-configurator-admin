@@ -13,6 +13,13 @@ $color-error: #ffcccc;
 $color-success: #ccffcc;
 $color-warning: #ffffcc;
 
+// ------ Media Queries ------
+$breakpoint-xl: 2000px;
+$breakpoint-big: 1600px;
+$breakpoint-medium: 1080px;
+$breakpoint-tablet: 820px;
+$breakpoint-mobile: 550px;
+
 // ------ CSS Reset ------
 * {
   margin: 0;
@@ -69,24 +76,17 @@ a {
 
 // ------ Layout ------
 .section__margin {
-  margin: 4rem;
+  margin: 2rem;
 
-  @media (min-width: 1400px) {
-    margin: 4rem 6rem;
+  @media (min-width: $breakpoint-xl) {
+    margin: 6rem;
   }
 }
 
 .section__padding {
-  padding: 4rem;
+  padding: 2rem;
 
-  @media (min-width: 1400px) {
-    padding: 4rem 6rem;
+  @media (min-width: $breakpoint-xl) {
+    padding: 6rem;
   }
 }
-
-// ------ Media Queries ------
-$breakpoint-xl: 2000px;
-$breakpoint-big: 1600px;
-$breakpoint-medium: 1080px;
-$breakpoint-tablet: 820px;
-$breakpoint-mobile: 550px;

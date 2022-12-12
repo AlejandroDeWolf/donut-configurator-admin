@@ -1,23 +1,39 @@
 @use "../global";
 
 .container__dashboard {
+  padding-bottom: 0;
+
   @media (min-width: global.$breakpoint-tablet) {
     display: flex;
   }
 
   .dashboard {
     width: 85%;
+    height: 100vh;
 
     @media (max-width: global.$breakpoint-tablet) {
       width: 100%;
+    }
+
+    .dashboard__content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0 24px;
     }
 
     .dashboard__content__donuts {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(2, 1fr);
-      grid-column-gap: 32px;
-      grid-row-gap: 32px;
+      grid-column-gap: 80px;
+      grid-row-gap: 40px;
+
+      @media (max-width: global.$breakpoint-big) {
+        grid-column-gap: 32px;
+        grid-row-gap: 32px;
+      }
 
       @media (max-width: global.$breakpoint-tablet) {
         grid-template-columns: repeat(2, 1fr);
