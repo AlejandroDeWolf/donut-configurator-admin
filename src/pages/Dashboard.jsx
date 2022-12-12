@@ -46,7 +46,11 @@ const Dashboard = () => {
             <h2>Dashboard</h2>
           </div>
           <Donuts donuts={currentDonuts} loading={loading} />
-          <Pagination donutsPerPage={donutsPerPage} totalDonuts={donuts.length} paginate={paginate} />
+          <Pagination
+            donutsPerPage={donutsPerPage}
+            totalDonuts={donuts.length}
+            paginate={paginate}
+          />
         </div>
       </div>
     </div>
