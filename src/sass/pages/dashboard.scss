@@ -1,25 +1,38 @@
 @use "../global";
 
 .container__dashboard {
-    @media (min-width: 768px) {
-        display: flex;
+  @media (min-width: 768px) {
+    display: flex;
+  }
+
+  .dashboard {
+    width: 85%;
+
+    @media (max-width: 768px) {
+      width: 100%;
     }
 
-    .dashboard {
-        width: 85%;
+    .dashboard__content__donuts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      grid-column-gap: 32px;
+      grid-row-gap: 32px;
 
-        .dashboard__content__donuts {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-            grid-column-gap: 32px;
-            grid-row-gap: 32px;
+      @media (max-width: global.$breakpoint-tablet) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+      }
 
-            .dashboard__content__donuts__donut {
-                background-color: #fff;
-                min-height: 200px;
-            }
-        }
+      @media (max-width: global.$breakpoint-mobile) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(8, 1fr);
+      }
 
+      .dashboard__content__donuts__donut {
+        background-color: #fff;
+        min-height: 200px;
+      }
     }
+  }
 }
