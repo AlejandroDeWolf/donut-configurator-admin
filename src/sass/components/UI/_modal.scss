@@ -1,3 +1,5 @@
+@use "../../global";
+
 .modal {
   position: absolute;
   top: 50%;
@@ -10,4 +12,45 @@
   padding: 40px;
   outline: 0;
   border-radius: 16px;
+
+  span {
+    color: global.$color-gray;
+    font-size: 0.8rem;
+  }
+
+  .modal__content__image {
+    width: 70%;
+    margin: 0 auto;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .modal__content__data {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .modal__content__data--flex {
+      width: 50%;
+    }
+
+    .modal__content__data--flex--long {
+      width: 100%;
+    }
+
+    p {
+      display: flex;
+
+      span {
+        display: block;
+      }
+    }
+  }
+
+  .modal__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
 }

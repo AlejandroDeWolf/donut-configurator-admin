@@ -26,6 +26,17 @@
   background-color: global.$color-gray;
 }
 
+.btn--secondary {
+  background-color: transparent;
+  border: 2px solid global.$color-primary;
+  color: global.$color-primary;
+
+  &:hover {
+    background-color: global.$color-secondary;
+    border: 2px solid global.$color-secondary;
+  }
+}
+
 .form__btn {
   width: 100%;
 }

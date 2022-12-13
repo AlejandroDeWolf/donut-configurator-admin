@@ -5,8 +5,6 @@ import DonutModal from "./UI/DonutModal";
 const Donuts = ({ donuts, loading }) => {
   if (loading) {
     return <h1>Loading...</h1>;
-  } else {
-    console.log(donuts);
   }
 
   const handleOpen = () => setOpen(true);
