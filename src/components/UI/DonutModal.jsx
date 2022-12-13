@@ -5,6 +5,17 @@ import Modal from "@mui/material/Modal";
 const DonutModal = ({ modalData, open, handleClose }) => {
   const donutUrl = `https://donuttello.netlify.app/donut.html?id=${modalData._id}`;
 
+  const handleDelete = () => {
+    fetch(`https://adorable-red-sundress.cyclic.app/donuts/${modalData._id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        window.location.reload();
+      });
+  };
+
   return (
     <Modal open={open} onClose={handleClose}>
       <div className="modal">
@@ -16,30 +27,36 @@ const DonutModal = ({ modalData, open, handleClose }) => {
             </div>
           </div>
           <div className="modal__content__data">
-            <div className="modal__content__data__date modal__content__data--flex">
-              <span>Datum:</span>
-              <p>{modalData.date}</p>
+
+            <div className="modal__content__data__order">
+              <div className="modal__content__data__order__date">
+                <span>Datum:</span>
+                <p>{modalData.date}</p>
+              </div>
+              <div className="modal__content__data__order__quantity">
+                <span>Aantal:</span>
+                <p>100</p>
+              </div>
             </div>
-            <div className="modal__content__data__quantity modal__content__data--flex">
-              <span>Aantal:</span>
-              <p>100</p>
-            </div>
-            <div className="modal__content__data__quantity modal__content__data--flex--long">
-              <span>E-mail:</span>
-              <p>dewolf.alejandro@gmail.com</p>
-            </div>
-            <div className="modal__content__data__remarks modal__content__data--flex--long">
-              <span>Extra:</span>
-              <p>{modalData.remarks}</p>
+
+            <div className="modal__content__data__client">
+              <div className="modal__content__data__client__email">
+                <span>E-mail:</span>
+                <p>dewolf.alejandro@gmail.com</p>
+              </div>
+              <div className="modal__content__data__client__extra">
+                <span>Extra:</span>
+                <p>{modalData.remarks}</p>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="modal__buttons">
-          <button onClick={handleClose} className="btn btn--secondary">
-            Close
+          <button onClick={handleDelete} className="btn btn--secondary modal__buttons__button">
+            Verwijder donut
           </button>
-          <a href={donutUrl} target="_blank" rel="noreferrer" className="btn">
+          <a href={donutUrl} target="_blank" rel="noreferrer" className="btn modal__buttons__button modal__buttons__button--link">
             Bekijk donut
           </a>
         </div>
