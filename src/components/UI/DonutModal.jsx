@@ -3,7 +3,7 @@ import React from "react";
 import Modal from "@mui/material/Modal";
 
 const DonutModal = ({ modalData, open, handleClose }) => {
-  const donutUrl = `https://donutello.netlify.app/donut.html?id=${modalData._id}`;
+  const donutUrl = `https://donuttello.netlify.app/donut.html?id=${modalData._id}`;
 
   return (
     <Modal open={open} onClose={handleClose}>
