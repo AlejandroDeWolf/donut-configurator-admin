@@ -72,7 +72,6 @@ p {
   font-weight: normal;
   font-size: 1rem;
   line-height: 1.5;
-  margin-bottom: 2rem;
 }
 
 a {
@@ -81,8 +80,25 @@ a {
 }
 
 // ------ Layout ------
+.wrapper {
+  padding-bottom: 0;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: flex;
+  }
+
+  .wrapper__content {
+    width: 85%;
+    height: 100vh;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 100%;
+    }
+  }
+}
+
 .section__margin {
-  margin: 2rem;
+  margin: 2rem 4rem;
 
   @media (min-width: $breakpoint-xl) {
     margin: 6rem;
@@ -90,7 +106,7 @@ a {
 }
 
 .section__padding {
-  padding: 2rem;
+  padding: 2rem 4rem;
 
   @media (min-width: $breakpoint-xl) {
     padding: 6rem;

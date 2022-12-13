@@ -20,7 +20,6 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 0 24px;
     }
 
     .dashboard__content__donuts {
@@ -43,11 +42,6 @@
       @media (max-width: global.$breakpoint-mobile) {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(8, 1fr);
-      }
-
-      .dashboard__content__donuts__donut {
-        background-color: #fff;
-        min-height: 200px;
       }
     }
   }
