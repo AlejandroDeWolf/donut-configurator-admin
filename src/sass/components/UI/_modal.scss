@@ -43,6 +43,11 @@
     p {
       display: flex;
 
+      // last one margin
+      &:last-child {
+        margin-bottom: 2rem;
+      }
+
       span {
         display: block;
       }

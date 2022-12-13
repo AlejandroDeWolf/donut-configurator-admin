@@ -98,7 +98,7 @@ a {
 }
 
 .section__margin {
-  margin: 2rem 4rem;
+  margin: 4rem;
 
   @media (min-width: $breakpoint-xl) {
     margin: 6rem;
@@ -106,7 +106,7 @@ a {
 }
 
 .section__padding {
-  padding: 2rem 4rem;
+  padding: 4rem;
 
   @media (min-width: $breakpoint-xl) {
     padding: 6rem;

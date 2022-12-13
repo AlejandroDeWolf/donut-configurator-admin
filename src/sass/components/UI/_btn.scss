@@ -16,6 +16,11 @@
     background-color: global.$color-secondary;
     color: global.$color-primary;
   }
+
+  // tablet screen
+  @media screen and (max-width: global.$breakpoint-tablet) {
+    width: 100%;
+  }
 }
 
 .btn--active {
