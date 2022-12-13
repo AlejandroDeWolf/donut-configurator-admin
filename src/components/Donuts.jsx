@@ -2,11 +2,7 @@ import React, { useState } from "react";
 
 import DonutModal from "./UI/DonutModal";
 
-const Donuts = ({ donuts, loading }) => {
-  if (loading) {
-    return <h1>Loading...</h1>;
-  }
-
+const Donuts = ({ donuts }) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [open, setOpen] = useState(false);
