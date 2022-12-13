@@ -34,16 +34,22 @@
   }
 
   .login__form {
-    width: 18%;
+    width: 20%;
     margin: 0 auto;
 
     @media (max-width: global.$breakpoint-tablet) {
       width: 100%;
       padding: 2rem;
     }
-  }
 
-  .login__form__title {
-    margin-bottom: 3rem;
+    .login__form__loader {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    .login__form__title {
+      margin-bottom: 3rem;
+    }
   }
 }
