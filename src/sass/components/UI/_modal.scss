@@ -48,8 +48,26 @@
         }
       }
 
-      .modal__content__data__client__email {
+      .modal__content__data__email,
+      .modal__content__data__status__current,
+      .modal__content__data__extra {
         margin-bottom: 1rem;
+      }
+
+      .modal__content__data__status__edit {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+
+        .modal__content__data__status__edit__select {
+          width: 50%;
+        }
+      }
+
+      .modal__content__data__status__current {
+        span {
+          display: block;
+        }
       }
     }
   }
