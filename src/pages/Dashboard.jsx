@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-
 import { Donuts, Pagination, Sidebar } from "../components";
+import { Oval } from 'react-loader-spinner'
 
 const Dashboard = () => {
-  // check if user is logged in
   const token = localStorage.getItem("token");
   if (!token) {
     window.location.href = "/";
@@ -11,11 +10,10 @@ const Dashboard = () => {
     console.log("logged in");
   }
 
-  // fetch donut data from api
   const [donuts, setDonuts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [donutsPerPage] = useState(8);
+  const [donutsPerPage] = useState(10);
 
   useEffect(() => {
     const fetchDonuts = async () => {
@@ -29,12 +27,10 @@ const Dashboard = () => {
     fetchDonuts();
   }, []);
 
-  // get current donuts
   const indexOfLastDonut = currentPage * donutsPerPage;
   const indexOfFirstDonut = indexOfLastDonut - donutsPerPage;
   const currentDonuts = donuts.slice(indexOfFirstDonut, indexOfLastDonut);
 
-  // change page
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
   return (
@@ -42,6 +38,21 @@ const Dashboard = () => {
       <Sidebar />
       <div className="dashboard section__padding">
         <div className="dashboard__content">
+          {/* if loading show loader */}
+          {loading && (
+            <div className="dashboard__content__loader">
+              <Oval
+                height={80}
+                width={80}
+                color="#e72c70"
+                visible={true}
+                ariaLabel='oval-loading'
+                secondaryColor="#f5659a"
+                strokeWidth={18}
+                strokeWidthSecondary={18}
+              />
+            </div>
+          )}
           <Donuts donuts={currentDonuts} loading={loading} />
           <Pagination
             donutsPerPage={donutsPerPage}
