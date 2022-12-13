@@ -1,6 +1,6 @@
-import React from "react";
-
+import React, { useRef } from "react";
 import Modal from "@mui/material/Modal";
+import { RiCheckFill } from "react-icons/ri";
 
 const DonutModal = ({ modalData, open, handleClose }) => {
   const donutUrl = `https://donuttello.netlify.app/donut.html?id=${modalData._id}`;
@@ -15,6 +15,33 @@ const DonutModal = ({ modalData, open, handleClose }) => {
         window.location.reload();
       });
   };
+
+  // value of selected option with useRef
+  const status = useRef();
+
+  // get value from select
+  const handleSelect = (e) => {
+    status.current = e.target.value;
+    console.log(status.current);
+  };
+
+  // post currently selected status to database
+  const handleStatus = () => {
+    fetch(`https://adorable-red-sundress.cyclic.app/donuts/${modalData._id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        status: status.current,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        window.location.reload();
+      });
+  }
 
   return (
     <Modal open={open} onClose={handleClose}>
@@ -35,19 +62,43 @@ const DonutModal = ({ modalData, open, handleClose }) => {
               </div>
               <div className="modal__content__data__order__quantity">
                 <span>Aantal:</span>
-                <p>100</p>
+                <p>{modalData.quantity}</p>
               </div>
             </div>
 
-            <div className="modal__content__data__client">
-              <div className="modal__content__data__client__email">
-                <span>E-mail:</span>
-                <p>dewolf.alejandro@gmail.com</p>
+            <div className="modal__content__data__email">
+              <span>E-mail:</span>
+              <p>{modalData.email}</p>
+            </div>
+
+            <div className="modal__content__data__status">
+              <div className="modal__content__data__status__current">
+                <span>Status:</span>
+                <p>{modalData.status}</p>
               </div>
-              <div className="modal__content__data__client__extra">
-                <span>Extra:</span>
-                <p>{modalData.remarks}</p>
+              <div className="modal__content__data__status__edit">
+                <div className="modal__content__data__status__current">
+                  <span>Wijzig status:</span>
+                  <select id="status" onChange={handleSelect}
+                    ref={status}>
+                    <option value="Nieuw">Nieuw</option>
+                    <option value="In behandeling">In behandeling</option>
+                    <option value="Geleverd">Geleverd</option>
+                  </select>
+                </div>
+                <div className="modal__content__data__status__confirm">
+                  <button className="btn btn--small"
+                    onClick={handleStatus}
+                  >
+                    <RiCheckFill />
+                  </button>
+                </div>
               </div>
+            </div>
+
+            <div className="modal__content__data__extra">
+              <span>Extra:</span>
+              <p>{modalData.remarks}</p>
             </div>
           </div>
         </div>
