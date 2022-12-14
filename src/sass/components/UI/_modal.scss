@@ -68,6 +68,26 @@
           display: block;
         }
       }
+
+      .modal__content__data__status__confirm__btn {
+        background-color: global.$color-primary;
+        border: none;
+        border-radius: 50px;
+        height: 75%;
+        padding: 0 0.7rem;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+
+        // hover
+        &:hover {
+          background-color: global.$color-secondary;
+        }
+
+        .modal__content__data__status__confirm__btn__icon {
+          color: global.$color-white;
+          font-size: 1.4rem;
+        }
+      }
     }
   }
 }
