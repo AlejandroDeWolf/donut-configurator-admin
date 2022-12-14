@@ -41,7 +41,7 @@ const DonutModal = ({ modalData, open, handleClose }) => {
         console.log(data);
         window.location.reload();
       });
-  }
+  };
 
   return (
     <Modal open={open} onClose={handleClose}>
@@ -54,7 +54,6 @@ const DonutModal = ({ modalData, open, handleClose }) => {
             </div>
           </div>
           <div className="modal__content__data">
-
             <div className="modal__content__data__order">
               <div className="modal__content__data__order__date">
                 <span>Datum:</span>
@@ -79,18 +78,18 @@ const DonutModal = ({ modalData, open, handleClose }) => {
               <div className="modal__content__data__status__edit">
                 <div className="modal__content__data__status__current">
                   <span>Wijzig status:</span>
-                  <select id="status" onChange={handleSelect}
-                    ref={status}>
+                  <select id="status" onChange={handleSelect} ref={status}>
                     <option value="Nieuw">Nieuw</option>
                     <option value="In behandeling">In behandeling</option>
                     <option value="Geleverd">Geleverd</option>
                   </select>
                 </div>
                 <div className="modal__content__data__status__confirm">
-                  <button className="btn btn--small"
+                  <button
+                    className="modal__content__data__status__confirm__btn"
                     onClick={handleStatus}
                   >
-                    <RiCheckFill />
+                    <RiCheckFill className="modal__content__data__status__confirm__btn__icon" />
                   </button>
                 </div>
               </div>
@@ -104,10 +103,18 @@ const DonutModal = ({ modalData, open, handleClose }) => {
         </div>
 
         <div className="modal__buttons">
-          <button onClick={handleDelete} className="btn btn--secondary modal__buttons__button">
+          <button
+            onClick={handleDelete}
+            className="btn btn--secondary modal__buttons__button"
+          >
             Verwijder donut
           </button>
-          <a href={donutUrl} target="_blank" rel="noreferrer" className="btn modal__buttons__button modal__buttons__button--link">
+          <a
+            href={donutUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="btn modal__buttons__button modal__buttons__button--link"
+          >
             Bekijk donut
           </a>
         </div>
