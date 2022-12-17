@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Pagination = ({ donutsPerPage, totalDonuts, paginate }) => {
-    // create pagination and highlight current page
     const pageNumbers = []
 
     for (let i = 1; i <= Math.ceil(totalDonuts / donutsPerPage); i++) {
