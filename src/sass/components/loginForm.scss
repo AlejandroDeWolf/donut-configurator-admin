@@ -30,3 +30,11 @@
     }
   }
 }
+
+.form__error {
+  background-color: global.$color-error;
+  color: global.$color-black;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+}
