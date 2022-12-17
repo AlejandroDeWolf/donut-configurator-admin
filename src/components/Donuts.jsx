@@ -16,6 +16,7 @@ const Donuts = ({ donuts }) => {
         modalData={modalData}
         className="modal__container"
       />
+
       <div className="dashboard__content__donuts">
         {donuts.map((donut) => (
           <div
@@ -26,16 +27,19 @@ const Donuts = ({ donuts }) => {
               setModalData(donut);
             }}
           >
-            <div className="dashboard__content__donuts__donut__image">
-              <img src={donut.snapshot} alt="donut" />
-            </div>
-            <div className="dashboard__content__donuts__donut__info">
-              <h3>{donut.company}</h3>
-              <p>{donut.date}</p>
+            <div className="dashboard__content__donuts__donut__content">
+              <div className="dashboard__content__donuts__donut__content__image">
+                <img src={donut.snapshot} alt="donut" />
+              </div>
+              <div className="dashboard__content__donuts__donut__content__info">
+                <h3>{donut.company}</h3>
+                <p>{donut.date}</p>
+              </div>
             </div>
           </div>
         ))}
       </div>
+
     </>
   );
 };
