@@ -38,7 +38,6 @@ const Dashboard = () => {
       <Sidebar />
       <div className="dashboard section__padding">
         <div className="dashboard__content">
-          {/* if loading show loader */}
           {loading && (
             <div className="dashboard__content__loader">
               <Oval
