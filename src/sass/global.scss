@@ -18,6 +18,7 @@ $color-light-gray: #dadada;
 $color-error: #ffcccc;
 $color-success: #ccffcc;
 $color-warning: #ffffcc;
+$color-info: #e6f7ff;
 
 // ------ Media Queries ------
 $breakpoint-xl: 2000px;
@@ -98,7 +99,11 @@ a {
 }
 
 .section__margin {
-  margin: 4rem;
+  margin: 2rem;
+
+  @media (min-width: $breakpoint-tablet) {
+    margin: 4rem;
+  }
 
   @media (min-width: $breakpoint-xl) {
     margin: 6rem;
@@ -106,7 +111,11 @@ a {
 }
 
 .section__padding {
-  padding: 4rem;
+  padding: 2rem;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 4rem;
+  }
 
   @media (min-width: $breakpoint-xl) {
     padding: 6rem;
