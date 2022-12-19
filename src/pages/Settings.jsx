@@ -10,27 +10,6 @@ const Settings = () => {
     console.log("logged in");
   }
 
-  const [oldPassword, setOldPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const { oldPassword, newPassword } = this.state;
-
-    fetch("http://localhost:5000/api/users/update-password", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ oldPassword, newPassword }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((err) => console.log(err));
-  };
-
   return (
     <>
       <div className="wrapper">
