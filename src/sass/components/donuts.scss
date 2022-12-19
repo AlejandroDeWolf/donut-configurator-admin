@@ -11,7 +11,6 @@
   }
 
   @media (max-width: global.$breakpoint-mobile) {
-    // all under each other
     grid-template-columns: 1fr;
   }
 
@@ -47,7 +46,7 @@
     }
 
     &:hover {
-      box-shadow: rgb(231, 44, 112, 0.6) 0px 0px 60px;
+      box-shadow: rgb(231, 44, 112, 0.6) 0px 0px 32px;
     }
 
     .dashboard__content__donuts__donut__content {
@@ -57,6 +56,7 @@
       padding: 1rem;
       height: 100%;
       width: 100%;
+      position: relative;
 
       .dashboard__content__donuts__donut__content__image {
         width: 100%;
@@ -74,13 +74,34 @@
         width: 100%;
         // cut off text
 
-
         // cut off h3 text if it's too long
         h3 {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
         }
+      }
+
+      .dashboard__content__donuts__donut__content__status {
+        width: 16px;
+        height: 16px;
+        background-color: global.$color-success;
+        border-radius: 50%;
+        position: absolute;
+        top: 16px;
+        right: 16px;
+      }
+
+      .status__new {
+        background-color: global.$color-info;
+      }
+
+      .status__progress {
+        background-color: global.$color-warning;
+      }
+
+      .status__done {
+        background-color: global.$color-success;
       }
     }
   }
