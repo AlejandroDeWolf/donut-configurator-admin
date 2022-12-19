@@ -1,39 +1,39 @@
 @use "../global";
 
 .pagination {
-    display: flex;
+  display: flex;
 
-    // small screen
-    @media (max-width: global.$breakpoint-tablet) {
-        margin: 1rem 0;
+  // small screen
+  @media (max-width: global.$breakpoint-tablet) {
+    margin: 1rem 0;
+  }
+
+  .pagination__item {
+    margin: 0 8px;
+    list-style: none;
+
+    .pagination__item__link {
+      background-color: global.$color-light-gray;
+      color: global.$color-black;
+      font-family: "Lato", sans-serif;
+      font-size: 0.8rem;
+      text-decoration: none;
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.1s ease-in-out;
+
+      &:hover {
+        background-color: global.$color-primary;
+        color: global.$color-white;
+      }
+
+      &.active {
+        background-color: global.$color-primary;
+        color: global.$color-white;
+      }
     }
-
-    .pagination__item {
-        margin: 0 8px;
-        list-style: none;
-
-        .pagination__item__link {
-            background-color: global.$color-light-gray;
-            color: global.$color-black;
-            font-family: "Lato", sans-serif;
-            font-size: .8rem;
-            text-decoration: none;
-            width: 40px;
-            height: 40px;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all .1s ease-in-out;
-
-            &:hover {
-                background-color: global.$color-primary;
-                color: global.$color-white;
-            }
-
-            &.active {
-                background-color: global.$color-primary;
-                color: global.$color-white;
-            }
-        }
-    }
+  }
 }

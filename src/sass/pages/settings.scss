@@ -1,7 +1,7 @@
 @use "../global";
 
 .form__group--small {
-  width: 50%;
+  width: 30%;
 
   @media screen and (max-width: global.$breakpoint-tablet) {
     width: 100%;

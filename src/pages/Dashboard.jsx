@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Donuts, Pagination, Sidebar } from "../components";
-import { Oval } from 'react-loader-spinner'
+import { Oval } from "react-loader-spinner";
 
 const Dashboard = () => {
   const token = localStorage.getItem("token");
@@ -45,7 +45,7 @@ const Dashboard = () => {
                 width={80}
                 color="#e72c70"
                 visible={true}
-                ariaLabel='oval-loading'
+                ariaLabel="oval-loading"
                 secondaryColor="#f5659a"
                 strokeWidth={18}
                 strokeWidthSecondary={18}
