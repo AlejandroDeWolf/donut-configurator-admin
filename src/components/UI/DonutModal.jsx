@@ -16,24 +16,17 @@ const DonutModal = ({ modalData, open, handleClose }) => {
       });
   };
 
-  // value of selected option with useRef
   const status = useRef();
 
-  // get value from select
-  const handleSelect = (e) => {
-    status.current = e.target.value;
-    console.log(status.current);
-  };
-
-  // post currently selected status to database
   const handleStatus = () => {
+    console.log(status.current.value);
     fetch(`https://adorable-red-sundress.cyclic.app/donuts/${modalData._id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        status: status.current,
+        status: status.current.value,
       }),
     })
       .then((res) => res.json())
@@ -75,25 +68,18 @@ const DonutModal = ({ modalData, open, handleClose }) => {
                 <span>Status:</span>
                 <p>{modalData.status}</p>
               </div>
+
               <div className="modal__content__data__status__edit">
-                <div className="modal__content__data__status__current">
+                <div className="modal__content__data__status__edit__title">
                   <span>Wijzig status:</span>
-                  <select id="status" onChange={handleSelect} ref={status}>
-                    <option disabled selected value>
-                      -- select an option --
-                    </option>
+                </div>
+                <div className="modal__content__data__status__edit__select">
+                  <select id="status" onChange={handleStatus} ref={status}>
+                    <option value={modalData.status}>{modalData.status}</option>
                     <option value="Nieuw">Nieuw</option>
                     <option value="In behandeling">In behandeling</option>
                     <option value="Geleverd">Geleverd</option>
                   </select>
-                </div>
-                <div className="modal__content__data__status__confirm">
-                  <button
-                    className="modal__content__data__status__confirm__btn"
-                    onClick={handleStatus}
-                  >
-                    <RiCheckFill className="modal__content__data__status__confirm__btn__icon" />
-                  </button>
                 </div>
               </div>
             </div>

@@ -54,18 +54,25 @@
         margin-bottom: 1rem;
       }
 
-      .modal__content__data__status__edit {
+      .modal__content__data__status {
+        width: 100%;
         display: flex;
         justify-content: space-between;
 
-        .modal__content__data__status__edit__select {
+        .modal__content__data__status__current,
+        .modal__content__data__status__edit {
           width: 50%;
-        }
-      }
 
-      .modal__content__data__status__current {
-        span {
-          display: block;
+          .modal__content__data__status__edit__select {
+            select {
+              width: 100%;
+              border: 1px solid global.$color-gray;
+              border-radius: 5px;
+              padding: 0.2rem;
+              background-color: global.$color-white;
+              cursor: pointer;
+            }
+          }
         }
       }
 
