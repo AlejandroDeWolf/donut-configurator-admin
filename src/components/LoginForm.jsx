@@ -7,7 +7,6 @@ const LoginForm = () => {
 
   const [loading, setLoading] = useState(false);
 
-  // error handling
   const [error, setError] = useState(false);
 
   const fetchLogin = async (e) => {
