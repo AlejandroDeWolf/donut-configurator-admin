@@ -79,6 +79,9 @@ const DonutModal = ({ modalData, open, handleClose }) => {
                 <div className="modal__content__data__status__current">
                   <span>Wijzig status:</span>
                   <select id="status" onChange={handleSelect} ref={status}>
+                    <option disabled selected value>
+                      -- select an option --
+                    </option>
                     <option value="Nieuw">Nieuw</option>
                     <option value="In behandeling">In behandeling</option>
                     <option value="Geleverd">Geleverd</option>
