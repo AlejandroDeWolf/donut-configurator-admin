@@ -35,11 +35,19 @@ const Donuts = ({ donuts }) => {
                 <h3>{donut.company}</h3>
                 <p>{donut.date}</p>
               </div>
+              {donut.status === "Nieuw" && (
+                <div className="dashboard__content__donuts__donut__content__status status__new"></div>
+              )}
+              {donut.status === "In behandeling" && (
+                <div className="dashboard__content__donuts__donut__content__status status__progress"></div>
+              )}
+              {donut.status === "Geleverd" && (
+                <div className="dashboard__content__donuts__donut__content__status status__done"></div>
+              )}
             </div>
           </div>
         ))}
       </div>
-
     </>
   );
 };
