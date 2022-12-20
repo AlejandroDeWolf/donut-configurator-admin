@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Fade from "react-reveal/Fade";
 import { Donuts, Pagination, Sidebar } from "../components";
 import { Oval } from "react-loader-spinner";
 
@@ -53,11 +54,13 @@ const Dashboard = () => {
             </div>
           )}
           <Donuts donuts={currentDonuts} loading={loading} />
-          <Pagination
-            donutsPerPage={donutsPerPage}
-            totalDonuts={donuts.length}
-            paginate={paginate}
-          />
+          <Fade>
+            <Pagination
+              donutsPerPage={donutsPerPage}
+              totalDonuts={donuts.length}
+              paginate={paginate}
+            />
+          </Fade>
         </div>
       </div>
     </div>
