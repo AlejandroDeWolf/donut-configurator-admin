@@ -1,8 +1,10 @@
-import React from "react";
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
+import { Oval } from "react-loader-spinner";
 
 const SettingsForm = () => {
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const password = useRef();
   const newPassword = useRef();
@@ -11,6 +13,7 @@ const SettingsForm = () => {
 
   const updatePassword = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const passwordValue = password.current.value;
     const newPasswordValue = newPassword.current.value;
@@ -30,42 +33,73 @@ const SettingsForm = () => {
       }
     );
     const data = await response.json();
-    if (data.status === 200) {
-      console.log("password updated");
-    } else {
+    if (data.message) {
+      setLoading(false);
       setError(true);
+    } else {
+      setLoading(false);
+      setSuccess(true);
     }
   };
 
   return (
     <>
-      {error && (
+      {loading && (
+        <div className="settings__form__loader">
+          <Oval
+            height={80}
+            width={80}
+            color="#e72c70"
+            visible={true}
+            ariaLabel="oval-loading"
+            secondaryColor="#f5659a"
+            strokeWidth={18}
+            strokeWidthSecondary={18}
+          />
+        </div>
+      )}
+
+      {success && !loading && (
+        <div className="form__success form__success--settings">
+          <p>Wachtwoord is gewijzigd.</p>
+        </div>
+      )}
+
+      {error && !loading && (
         <div className="form__error form__error--settings">
           <p>Er is iets misgegaan, probeer het opnieuw.</p>
         </div>
       )}
-      <form>
-        <div className="form__group form__group--small">
-          <label htmlFor="password">Huidig wachtwoord</label>
-          <input type="password" name="password" id="password" ref={password} />
-        </div>
-        <div className="form__group form__group--small">
-          <label htmlFor="password">Nieuw wachtwoord</label>
-          <input
-            type="password"
-            name="password"
-            id="passwordUpdate"
-            ref={newPassword}
-          />
-        </div>
-        <button
-          type="submit"
-          className="btn btn__logout"
-          onClick={updatePassword}
-        >
-          Wijzig wachtwoord
-        </button>
-      </form>
+
+      {!loading && (
+        <form>
+          <div className="form__group form__group--small">
+            <label htmlFor="password">Huidig wachtwoord</label>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              ref={password}
+            />
+          </div>
+          <div className="form__group form__group--small">
+            <label htmlFor="password">Nieuw wachtwoord</label>
+            <input
+              type="password"
+              name="password"
+              id="passwordUpdate"
+              ref={newPassword}
+            />
+          </div>
+          <button
+            type="submit"
+            className="btn btn__logout"
+            onClick={updatePassword}
+          >
+            Wijzig wachtwoord
+          </button>
+        </form>
+      )}
     </>
   );
 };

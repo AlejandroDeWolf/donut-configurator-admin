@@ -1,8 +1,17 @@
 @use "../global";
 
+.form__success {
+  background-color: global.$color-success;
+  color: global.$color-white;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
 .form__group--small,
 .form__error--settings,
-.btn__logout {
+.btn__logout,
+.form__success {
   width: 30%;
 
   @media screen and (max-width: global.$breakpoint-big) {
