@@ -13,6 +13,10 @@
   outline: 0;
   border-radius: 16px;
 
+  @media screen and (max-width: global.$breakpoint-mobile) {
+    width: 90%;
+  }
+
   span {
     color: global.$color-gray;
     font-size: 0.8rem;
@@ -22,11 +26,31 @@
     display: flex;
     justify-content: space-between;
 
+    @media screen and (max-width: global.$breakpoint-mobile) {
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+
     .modal__content__header {
       width: 40%;
 
+      h2 {
+        @media screen and (max-width: global.$breakpoint-mobile) {
+          width: 50%;
+        }
+      }
+
+      @media screen and (max-width: global.$breakpoint-mobile) {
+        width: 100%;
+        display: flex;
+      }
+
       .modal__content__image {
         width: 100%;
+
+        @media screen and (max-width: global.$breakpoint-mobile) {
+          width: 50%;
+        }
 
         img {
           width: 100%;
@@ -36,6 +60,10 @@
 
     .modal__content__data {
       width: 50%;
+
+      @media screen and (max-width: global.$breakpoint-mobile) {
+        width: 100%;
+      }
 
       .modal__content__data__order {
         display: flex;
@@ -103,8 +131,19 @@
   display: flex;
   justify-content: space-between;
 
+  // place buttons under each other on mobile
+  @media screen and (max-width: global.$breakpoint-mobile) {
+    flex-direction: column;
+  }
+
   .modal__buttons__button {
     width: 48%;
+
+    // place buttons under each other on mobile
+    @media screen and (max-width: global.$breakpoint-mobile) {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
   }
 
   .modal__buttons__button--link {

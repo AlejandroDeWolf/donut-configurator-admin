@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import Modal from "@mui/material/Modal";
-import { RiCheckFill } from "react-icons/ri";
 
 const DonutModal = ({ modalData, open, handleClose }) => {
   const donutUrl = `https://donuttello.netlify.app/donut.html?id=${modalData._id}`;
