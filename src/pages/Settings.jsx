@@ -17,7 +17,7 @@ const Settings = () => {
         <div className="wrapper__content section__padding">
           <div className="settings">
             <div className="settings__title">
-              <h1>Settings</h1>
+              <h1>Instellingen</h1>
             </div>
             <div className="settings__form">
               <SettingsForm />

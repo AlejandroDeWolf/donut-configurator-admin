@@ -94,6 +94,7 @@
 
   .nav-menu-items {
     width: 100%;
+    z-index: 1;
 
     @media screen and (min-width: global.$breakpoint-tablet) {
       height: 85%;
@@ -113,7 +114,7 @@
     }
 
     .nav__links__wrapper {
-      height: 100%;
+      height: 85%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -124,4 +125,5 @@
 .nav-menu.active {
   left: 0;
   transition: 450ms;
+  z-index: 1;
 }

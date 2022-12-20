@@ -51,7 +51,7 @@ const Sidebar = () => {
               <li className="nav-text">
                 <NavLink to="/settings" activeclassname="active">
                   <RiSettings3Fill />
-                  <span>Settings</span>
+                  <span>Instellingen</span>
                 </NavLink>
               </li>
             </div>

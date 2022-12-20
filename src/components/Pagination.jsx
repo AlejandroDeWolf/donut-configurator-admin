@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const Pagination = ({ donutsPerPage, totalDonuts, paginate }) => {
   const pageNumbers = [];
