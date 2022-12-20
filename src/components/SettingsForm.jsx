@@ -37,11 +37,6 @@ const SettingsForm = () => {
     }
   };
 
-  const logoutHandler = () => {
-    localStorage.removeItem("token");
-    window.location.href = "/";
-  };
-
   return (
     <>
       {error && (
@@ -63,23 +58,13 @@ const SettingsForm = () => {
             ref={newPassword}
           />
         </div>
-
-        <div className="form__group__buttons">
-          <button
-            type="submit"
-            className="btn btn--secondary"
-            onClick={logoutHandler}
-          >
-            Uitloggen
-          </button>
-          <button
-            type="submit"
-            className="btn btn__logout"
-            onClick={updatePassword}
-          >
-            Wijzig wachtwoord
-          </button>
-        </div>
+        <button
+          type="submit"
+          className="btn btn__logout"
+          onClick={updatePassword}
+        >
+          Wijzig wachtwoord
+        </button>
       </form>
     </>
   );

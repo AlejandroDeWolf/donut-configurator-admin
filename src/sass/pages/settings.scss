@@ -1,8 +1,13 @@
 @use "../global";
 
 .form__group--small,
-.form__error--settings {
-  width: 40%;
+.form__error--settings,
+.btn__logout {
+  width: 30%;
+
+  @media screen and (max-width: global.$breakpoint-big) {
+    width: 50%;
+  }
 
   @media screen and (max-width: global.$breakpoint-tablet) {
     width: 100%;
@@ -10,10 +15,7 @@
 }
 
 .btn__logout {
-  margin-left: 1rem;
-
   @media screen and (max-width: global.$breakpoint-tablet) {
-    margin-left: 0;
     margin-top: 1rem;
   }
 }

@@ -95,6 +95,10 @@
   .nav-menu-items {
     width: 100%;
 
+    @media screen and (min-width: global.$breakpoint-tablet) {
+      height: 85%;
+    }
+
     .navbar-toggle {
       background-color: global.$color-primary;
       width: 100%;
@@ -106,6 +110,13 @@
       @media screen and (min-width: global.$breakpoint-tablet) {
         display: none;
       }
+    }
+
+    .nav__links__wrapper {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
   }
 }

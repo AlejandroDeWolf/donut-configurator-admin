@@ -6,6 +6,7 @@ import {
   RiCloseFill,
   RiLayoutGridFill,
   RiSettings3Fill,
+  RiLogoutCircleLine,
 } from "react-icons/ri";
 import logo from "/assets/images/logo.png";
 
@@ -13,6 +14,11 @@ const Sidebar = () => {
   const [sidebar, setSidebar] = useState(false);
 
   const showSidebar = () => setSidebar(!sidebar);
+
+  const logoutHandler = () => {
+    localStorage.removeItem("token");
+    window.location.href = "/";
+  };
 
   return (
     <IconContext.Provider value={{ color: "undefined" }}>
@@ -33,18 +39,36 @@ const Sidebar = () => {
               <RiCloseFill />
             </NavLink>
           </li>
-          <li className="nav-text">
-            <NavLink to="/dashboard" activeclassname="active">
-              <RiLayoutGridFill />
-              <span>Dashboard</span>
-            </NavLink>
-          </li>
-          <li className="nav-text">
-            <NavLink to="/settings" activeclassname="active">
-              <RiSettings3Fill />
-              <span>Settings</span>
-            </NavLink>
-          </li>
+
+          <div className="nav__links__wrapper">
+            <div className="nav__links__primary">
+              <li className="nav-text">
+                <NavLink to="/dashboard" activeclassname="active">
+                  <RiLayoutGridFill />
+                  <span>Dashboard</span>
+                </NavLink>
+              </li>
+              <li className="nav-text">
+                <NavLink to="/settings" activeclassname="active">
+                  <RiSettings3Fill />
+                  <span>Settings</span>
+                </NavLink>
+              </li>
+            </div>
+
+            <div className="nav__links__secondary">
+              <li className="nav-text">
+                <NavLink
+                  to="/"
+                  activeclassname="active"
+                  onClick={logoutHandler}
+                >
+                  <RiLogoutCircleLine />
+                  <span>Logout</span>
+                </NavLink>
+              </li>
+            </div>
+          </div>
         </ul>
       </nav>
     </IconContext.Provider>
