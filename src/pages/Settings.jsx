@@ -1,6 +1,5 @@
-import React, { useState } from "react";
-import { Sidebar } from "../components";
-import { SettingsForm } from "../components";
+import React from "react";
+import { Sidebar, SettingsForm } from "../components";
 
 const Settings = () => {
   const token = localStorage.getItem("token");
